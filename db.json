@@ -1,0 +1,57 @@
+{
+  "projects": [
+    {
+      "name": "ERP Proz Educação",
+      "budget": "5000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 1000,
+      "services": [
+        {
+          "name": "Desenvolvimento do Front end",
+          "cost": "1000",
+          "description": "Contratar um desenvolvedor para realizar o serviço de Front end do ERP",
+          "id": "56d27498-621f-46b6-a2e2-b44db6b8e69f"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Sistema de Monitoramento de Barragens",
+      "budget": "7000",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 400,
+      "services": [
+        {
+          "name": "Constratar desenvolvedor Back-end",
+          "cost": "400",
+          "id": "81025e05-fb9d-44f7-9c1a-bffd91001c7f"
+        }
+      ],
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Infra"
+    },
+    {
+      "id": 2,
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": 3,
+      "name": "Design"
+    },
+    {
+      "id": 4,
+      "name": "Planejamento"
+    }
+  ]
+}
