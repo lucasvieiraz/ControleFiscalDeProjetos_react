@@ -10,26 +10,31 @@ function ServiceForm({ handleSubmit, btnText, projectData }) {
     e.preventDefault();
     
     // URL da API fake
-    const API_URL = 'https://controle-fiscal-de-projetos-react-7x3ox6kod.vercel.app/api/json-server';
-
+    const API_URL = 'https://controle-fiscal-de-projetos-react-7x3ox6kod.vercel.app';
+    
     try {
-      // Enviar dados para a API
-      const response = await fetch(`${API_URL}/services`, {
-        method: 'POST',
+      // Obtém o projeto atual
+      const projectResponse = await fetch(`${API_URL}/projects/${projectData.id}`);
+      const project = await projectResponse.json();
+      
+      // Adiciona o novo serviço ao projeto
+      project.services.push(service);
+
+      // Atualiza o projeto com o novo serviço
+      const updateResponse = await fetch(`${API_URL}/projects/${projectData.id}`, {
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(service),
+        body: JSON.stringify(project),
       });
 
-      if (!response.ok) {
-        throw new Error('Erro ao enviar dados');
+      if (!updateResponse.ok) {
+        throw new Error(`Erro ao atualizar projeto: ${updateResponse.statusText}`);
       }
 
-      // Atualiza o estado do projeto com os dados recebidos da API
-      const newService = await response.json();
-      projectData.services.push(newService);
-      handleSubmit(projectData);
+      const updatedProject = await updateResponse.json();
+      handleSubmit(updatedProject);
 
     } catch (error) {
       console.error('Erro:', error);
