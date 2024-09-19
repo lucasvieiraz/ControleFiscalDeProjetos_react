@@ -10,7 +10,7 @@ function ServiceForm({ handleSubmit, btnText, projectData }) {
     e.preventDefault();
     
     // URL da API fake
-    const API_URL = 'https://<YOUR_PROJECT>.vercel.app/api/json-server';
+    const API_URL = 'https://controle-fiscal-de-projetos-react-7x3ox6kod.vercel.app/api/json-server';
 
     try {
       // Enviar dados para a API
